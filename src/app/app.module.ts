@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ImageNotFoundPipe } from './pipes/image-not-found.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import {DomseguroPipe} from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     ImageNotFoundPipe,
     CardsComponent,
+    DomseguroPipe,
     LoadingComponent
   ],
   imports: [
