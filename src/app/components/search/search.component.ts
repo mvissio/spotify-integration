@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   buscar(term: string) {
     if (term.length > 0) {
       this.loading = true;
-      this._spotifyServ.getArtist(term)
+      this._spotifyServ.getArtists(term)
         .subscribe((data: any) => {
           this.artistsList = data;
           this.loading = false;
