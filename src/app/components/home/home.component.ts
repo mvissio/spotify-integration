@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {SpotifyService} from '../../services/spotify.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {SpotifyService} from '../../services/spotify.service';
   templateUrl: './home.component.html',
   styles: []
 })
-export class HomeComponent {
+export class HomeComponent{
   loading: boolean;
   newSongs: any[] = [];
   errorMessage;
@@ -14,14 +14,21 @@ export class HomeComponent {
 
   constructor(private _spotifyServ: SpotifyService) {
     this.loading = true;
-    this._spotifyServ.getNewReleases().subscribe((data: any) => {
-      this.newSongs = data;
-      this.loading = false;
-    }, (errService) => {
-      this.error = true;
-      this.loading = false;
-      this.errorMessage = errService.error.error.message;
-    });
+    _spotifyServ.getNewToken();
+    this.findData();
+  }
+
+  findData(){
+    setTimeout(() => {
+      this._spotifyServ.getNewReleases().subscribe((data: any) => {
+        this.newSongs = data;
+        this.loading = false;
+      }, (errService) => {
+        this.error = true;
+        this.loading = false;
+        this.errorMessage = errService.error.error.message;
+      });
+    }, 1000);
   }
 
 }
