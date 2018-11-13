@@ -28,7 +28,7 @@ export class HomeComponent{
         this.loading = false;
         this.errorMessage = errService.error.error.message;
       });
-    }, 1000);
+    }, 2000);
   }
 
 }

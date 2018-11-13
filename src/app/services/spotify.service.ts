@@ -19,7 +19,7 @@ export class SpotifyService {
       );
   }
 
-  serverUrlNewToken = 'http://mvissio.ddns.net:5000/spotify';
+  serverUrlNewToken = 'http://mvissio.ddns.net:5001/spotify';
   urlTrack = 'https://open.spotify.com/embed?uri=';
   token;
   clientId = '6d11be0e893d470dbb8a485a54877c00';
